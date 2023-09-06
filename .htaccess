@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "Nutzername: ewa Passwort: ewa"
+AuthUserFile ${EWA}/.htpasswd
+Require valid-user
+
+
+#<RequireAny>
+#	Require local
+#	Require ip 141.100.40.246
+#	Require ip 2001:41B8:9BF:FE74:287A:576B:51CE:E903
+#</RequireAny>

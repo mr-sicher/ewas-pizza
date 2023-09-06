@@ -1,0 +1,149 @@
+GRANT USAGE ON *.* TO 'ewa'@'localhost' IDENTIFIED BY PASSWORD '*DB89F22F851C82D40F5873BD4D2C256B0E57245D';
+
+GRANT SELECT, INSERT, UPDATE ON `ewa-pizza`.* TO 'ewa'@'localhost';
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 14. Jun 2016 um 13:06
+-- Server-Version: 10.1.13-MariaDB
+-- PHP-Version: 5.6.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `ewa-pizza`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `bestellung`
+--
+
+DROP TABLE IF EXISTS `bestellung`;
+CREATE TABLE `bestellung` (
+  `ID` int(16) UNSIGNED NOT NULL,
+  `Name` varchar(256) NOT NULL,
+  `Adresse` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `lieferung`
+--
+
+DROP TABLE IF EXISTS `lieferung`;
+CREATE TABLE `lieferung` (
+  `ID` int(32) UNSIGNED NOT NULL,
+  `B_ID` int(16) UNSIGNED NOT NULL,
+  `S_ID` int(16) UNSIGNED NOT NULL,
+  `Z_ID` int(16) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `speisekarte`
+--
+
+DROP TABLE IF EXISTS `speisekarte`;
+CREATE TABLE `speisekarte` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Name` varchar(256) CHARACTER SET utf8 COLLATE utf8_german2_ci NOT NULL,
+  `Preis` int(16) NOT NULL,
+  `Bild` varchar(256) CHARACTER SET utf8 COLLATE utf8_german2_ci NOT NULL DEFAULT 'pizza'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `speisekarte`
+--
+
+INSERT INTO `speisekarte` (`ID`, `Name`, `Preis`, `Bild`) VALUES
+(1, 'Margherita', 399, 'pizza'),
+(2, 'Salami', 417, 'pizza'),
+(3, 'Hawaii', 550, 'pizza'),
+(4, 'Diavolo', 250, 'pizza'),
+(5, 'Salami', 417, 'pizza'),
+(6, 'Pizza Käse mit extra sehr viel Käse', 100, 'pizza'),
+(7, 'Schinken Diavolo', 1, 'pizza');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `zustand`
+--
+
+DROP TABLE IF EXISTS `zustand`;
+CREATE TABLE `zustand` (
+  `ID` int(16) UNSIGNED NOT NULL,
+  `Name` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `zustand`
+--
+
+INSERT INTO `zustand` (`ID`, `Name`) VALUES
+(0, 'bestellt'),
+(1, 'im Ofen'),
+(2, 'fertig'),
+(3, 'unterwegs'),
+(4, 'ausgeliefert');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `bestellung`
+--
+ALTER TABLE `bestellung`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `lieferung`
+--
+ALTER TABLE `lieferung`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `speisekarte`
+--
+ALTER TABLE `speisekarte`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `zustand`
+--
+ALTER TABLE `zustand`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `bestellung`
+--
+ALTER TABLE `bestellung`
+  MODIFY `ID` int(16) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT für Tabelle `lieferung`
+--
+ALTER TABLE `lieferung`
+  MODIFY `ID` int(32) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT für Tabelle `speisekarte`
+--
+ALTER TABLE `speisekarte`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT für Tabelle `zustand`
+--
+ALTER TABLE `zustand`
+  MODIFY `ID` int(16) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

@@ -1,0 +1,202 @@
+@media screen {
+	body {
+		background: url(../imgs/bg.jpg) no-repeat center center fixed; 
+	    background-color: #87421F;
+		color: #127001;
+		font-family: "Open Sans", sans-serif;
+	}
+	nav {
+		padding-top: 0rem;
+		padding-left: 1rem;
+		padding-bottom: 1rem;
+		background-color: rgba(255,192,64,0.75);
+	    border-radius: 0rem 1rem 2rem 1.5rem;
+	    border: 2px solid #87421F;
+	    width: 50%;
+	    min-width: 16rem;
+	}
+	ul { 
+		padding-left: 0; 
+		padding-right: 0;
+	}
+	li {
+		list-style-type: none;
+	}
+	a {
+		font-size: 2rem;
+	    font-weight: bolder;
+	}
+	a:link{
+		color: #603311;
+	}
+	.auswahl_heading{
+		display: none;
+	}
+	.auswahl, .warenkorb, .bestellung, .lieferung, .noscript{
+		background-color: #FFF;
+		float: left;
+		margin: 0;
+		width: 20.5rem;
+		height: 100%
+		text-align: left;
+		min-width: 20rem;
+		padding: 0.5rem;
+		position:relative;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		margin-top: 2rem;
+		margin-bottom: 0.25rem;
+		border: 1px solid #d5d5d5;
+		border-radius: 0 0.25rem 0.5rem 0.25rem;
+	}
+	.auswahl{
+		margin-bottom: 10pt;
+	}
+	.lieferung{
+		width: 25rem;
+		min-width: 25rem;
+		height: 12.5rem;
+	    white-space: nowrap;
+	    overflow: auto;
+	}
+	.warenkorb{
+		/*position: fixed;
+		left: 330px;*/
+	}
+	.bestellung{
+		float: none;
+		width: auto;
+		padding: 0rem;
+		width: 15rem;
+		padding-top: 0rem;
+	}
+	.bestellung th{
+		width: 8rem;
+	    white-space: nowrap;
+		padding: 2rem;
+	}
+	.status{
+	  display: block;
+	  margin: 0.5em auto;
+	}
+	img{
+		width: 5rem;
+		padding: 0.5rem;
+		border: 1px solid #d5d5d5;
+		border-radius: 0.5em 0 0.5em 0;
+	}
+	input{
+		display: block;
+		margin: 0.25rem;
+	}
+	.button{
+		padding: 0.25rem;
+		border: 1px solid #d5d5d5;
+		border-radius: 0 0.25em 0.5em;
+		display: inline-block;
+		float: inherit;
+		position: relative;
+	}
+	.name{
+		margin-top: 0.25rem;
+		width: 10rem;
+	}
+	.address{
+		margin-top: 0.25rem;
+		margin-bottom: 0.25rem;
+		width: 14rem;
+	}
+	.title, .neu{
+		background-color: #fff;
+		width: 20rem;
+		min-width: 20rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.25rem;
+		padding-left: 0.5rem;
+		margin-left: 0.125rem;
+		margin-right: 0.125;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		border: 1px solid #d5d5d5;
+		border-radius: 0 0.25em 0.5em;
+	}
+	.neu{
+		border-radius: 0 1em 1em 1em;
+	}
+	.zustand input{
+		display: inline-block;
+		padding: 0.5rem;
+		margin: 0.5rem;
+	}
+	.noscript{
+		background-color: white;
+		position: fixed;
+		width: 50rem;
+		padding: 1rem;
+		padding-top: 0rem;
+		z-index:1000;
+		margin: 0 auto; 
+		margin-top: 2rem;
+		left: 0;
+		right: 0;
+		border: 1px solid red;
+		color: black;
+	}
+	.noscript a{
+		color: red;
+	}
+	.null{
+		font-size: 1rem;
+	}
+	.selected_items, .fehler{
+		float: left;
+		margin-bottom: 0.5rem;
+	}
+	.selected_items{
+		width: 14rem;
+		overflow: auto;
+	}
+	.fehler{
+		width: 5.25rem;
+		white-space: all;
+		color: red;
+		padding-left: 0.125rem;
+		margin-left: 0.25rem;
+		border: 1px solid #d5d5d5;
+		display: none;
+	}
+	.preis{
+		margin-bottom: 0.5rem;
+		width: 14rem;
+	}
+}
+@media print {
+	body{
+		color: #127001;
+	}
+	td img{
+		display: none;
+	}
+	table {
+		border-collapse: collapse;
+	}
+
+	td {
+    	padding-right: 5pt;
+    	text-align: left;
+	}
+	th{
+		display: none;
+	}
+	.warenkorb{
+		display: none;
+	}
+	head{
+		display: none;
+	}
+	.noscript{
+		display: none;
+	}
+
+}
+
